@@ -23,8 +23,4 @@
         }
     }
 
-    $conexao = BancoDados::conectar();  
-
-    if($conexao){
-        echo "Conectado";
-    }
+   
