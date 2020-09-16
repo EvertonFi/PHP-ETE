@@ -17,6 +17,22 @@ abstract class Lista{
             echo "Error: ".$e->getMessage();
         }
     }
+
+    static function AlunoUnico($id){
+        try {
+            $conexao = BancoDados::conectar();
+            $usuario = $conexao->prepare('SELECT * FROM aluno WHERE id_aluno = :id');
+            $usuario->bindValue(':id', $id);
+            $usuario->execute();
+
+            $usuario = $usuario->fetch(PDO::FETCH_OBJ);
+
+            return $usuario;
+
+        } catch (PDOException $e) {
+            echo "Error: ".$e->getMessage();
+        }
+    }
 }
 
 abstract class Cadastro{
@@ -39,16 +55,16 @@ abstract class Cadastro{
 }
 
 
-$nome = "Antonio";
-$altura = 1.89;
-$id_turma = 3;
+// $nome = "Antonio";
+// $altura = 1.89;
+// $id_turma = 3;
 
-$inserir = Cadastro::Aluno($nome, $altura, $id_turma);
+// $inserir = Cadastro::Aluno($nome, $altura, $id_turma);
 
-$alunos = Lista::Aluno();
+// $alunos = Lista::Aluno();
 
-foreach ($alunos as $aluno){
-    echo $aluno->nome. " ";
-    echo $aluno->id_turma. " ";
-    echo $aluno->altura . "<br>";
-}
+// foreach ($alunos as $aluno){
+//     echo $aluno->nome. " ";
+//     echo $aluno->id_turma. " ";
+//     echo $aluno->altura . "<br>";
+// }
