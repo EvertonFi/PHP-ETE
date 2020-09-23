@@ -7,7 +7,7 @@ abstract class Lista{
         try {
             
             $conexao = BancoDados::conectar();
-            $lista = $conexao->prepare('Select * from aluno');
+            $lista = $conexao->prepare('SELECT * FROM aluno WHERE statu = 0');
             $lista->execute();
             $lista = $lista->fetchAll(PDO::FETCH_OBJ);
 
@@ -21,7 +21,7 @@ abstract class Lista{
     static function AlunoUnico($id){
         try {
             $conexao = BancoDados::conectar();
-            $usuario = $conexao->prepare('SELECT * FROM aluno WHERE id_aluno = :id');
+            $usuario = $conexao->prepare('SELECT * FROM aluno WHERE id_aluno = :id AND statu = 0');
             $usuario->bindValue(':id', $id);
             $usuario->execute();
 
@@ -40,12 +40,13 @@ abstract class Cadastro{
         try {
             $conexao = BancoDados::conectar();
             $inserir = $conexao->prepare('
-            INSERT INTO aluno (nome, altura, id_turma)
-            VALUES (:nome, :altura, :turma)
+            INSERT INTO aluno (nome, altura, id_turma, statu)
+            VALUES (:nome, :altura, :turma, :statu)
             ');
             $inserir->bindValue(':nome', $nome);
             $inserir->bindValue(':altura', $altura);
             $inserir->bindValue(':turma', $id_turma);
+            $inserir->bindValue(':statu', 0);
             $inserir->execute();
 
         } catch (PDOException $e) {
