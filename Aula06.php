@@ -16,24 +16,24 @@
         }
     }
 
-    echo "<hr>";
-    $alunos = Lista::Aluno();
+//     echo "<hr>";
+//     $alunos = Lista::Aluno();
 
-foreach ($alunos as $aluno){
-    echo $aluno->id_aluno. " ";
-    echo $aluno->nome. " ";
-    echo $aluno->id_turma. " ";
-    echo $aluno->altura . "<br>";
-}
+// foreach ($alunos as $aluno){
+//     echo $aluno->id_aluno. " ";
+//     echo $aluno->nome. " ";
+//     echo $aluno->id_turma. " ";
+//     echo $aluno->altura . "<br>";
+// }
 
-echo "<hr>";
-$del = Delete::Aluno(4,0);
-echo "<hr>";
-$alunos = Lista::Aluno();
+// echo "<hr>";
+// $del = Delete::Aluno(4,0);
+// echo "<hr>";
+// $alunos = Lista::Aluno();
 
-foreach ($alunos as $aluno){
-    echo $aluno->id_aluno. " ";
-    echo $aluno->nome. " ";
-    echo $aluno->id_turma. " ";
-    echo $aluno->altura . "<br>";
-}
+// foreach ($alunos as $aluno){
+//     echo $aluno->id_aluno. " ";
+//     echo $aluno->nome. " ";
+//     echo $aluno->id_turma. " ";
+//     echo $aluno->altura . "<br>";
+// }

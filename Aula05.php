@@ -21,21 +21,21 @@
         }
     }
 
-    $id_aluno_alteracao = 9;
+    // $id_aluno_alteracao = 9;
 
-    $aluno = Lista::AlunoUnico($id_aluno_alteracao);
+    // $aluno = Lista::AlunoUnico($id_aluno_alteracao);
 
-    if ($aluno) {
+    // if ($aluno) {
         
-        $id = $id_aluno_alteracao;
-        $nome = "Figueiredo";
-        $altura = 1.80;
-        $id_turma = 1;
+    //     $id = $id_aluno_alteracao;
+    //     $nome = "Figueiredo";
+    //     $altura = 1.80;
+    //     $id_turma = 1;
 
-        $mudar = Alteracao::Aluno($id,$nome,$altura,$id_turma);
+    //     $mudar = Alteracao::Aluno($id,$nome,$altura,$id_turma);
 
-    }else{
-        echo "Aluno não existe";
-    }
+    // }else{
+    //     echo "Aluno não existe";
+    // }
 
     

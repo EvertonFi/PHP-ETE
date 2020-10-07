@@ -45,7 +45,7 @@ abstract class Cadastro{
             ');
             $inserir->bindValue(':nome', $nome);
             $inserir->bindValue(':altura', $altura);
-            $inserir->bindValue(':turma', $id_turma);
+            $inserir->bindValue(':turma', 1);
             $inserir->bindValue(':statu', 0);
             $inserir->execute();
 
