@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="botao">Teste</button>
+    <div id="resultado"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#botao").click(function(){
+            $.ajax({
+                method: "POST",
+                url: "script.php",
+                data: {nome: "Everton", email: "everton@ete.com"},
+                success: function(resultado){
+                    $("#resultado").html(resultado);
+                }
+            });
+        });
+    });
+</script>
+</html>
